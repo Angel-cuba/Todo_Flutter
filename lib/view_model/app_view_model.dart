@@ -12,6 +12,11 @@ class AppViewModel extends ChangeNotifier {
   Color clr3 = Colors.grey.shade800;
   Color clr4 = Colors.grey.shade900;
 
+  void addSingleTask(Task newTask) {
+    task.add(newTask);
+    notifyListeners();
+  }
+
   void buttonShow(Widget bottomSheetView, BuildContext context) {
     showModalBottomSheet(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
