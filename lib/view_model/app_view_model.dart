@@ -19,6 +19,11 @@ class AppViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void removeTask(int taskIndex) {
+    task.removeAt(taskIndex);
+    notifyListeners();
+  }
+
   bool getTaskValue(int taskIndex) {
     return task[taskIndex].isDone;
   }

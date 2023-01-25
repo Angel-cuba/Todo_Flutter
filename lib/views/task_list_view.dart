@@ -27,6 +27,24 @@ class TaskListView extends StatelessWidget {
                 itemBuilder: ((context, index) {
                   return Dismissible(
                     key: UniqueKey(),
+                    onDismissed: (direction) =>
+                        direction == DismissDirection.endToStart
+                            ? value.removeTask(index)
+                            : value.setTaskValue(index, true),
+                    background: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
+                      decoration: BoxDecoration(
+                        color: Colors.red.shade100,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Center(
+                        child: Icon(
+                          Icons.delete,
+                          color: Colors.red,
+                          size: 30,
+                        ),
+                      ),
+                    ),
                     child: Container(
                       decoration: BoxDecoration(
                         color: value.clr1,
@@ -35,7 +53,7 @@ class TaskListView extends StatelessWidget {
                       child: ListTile(
                         leading: Checkbox(
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(5)),
                           activeColor: value.clr3,
                           checkColor: value.clr1,
                           side: BorderSide(color: value.clr3, width: 1),
