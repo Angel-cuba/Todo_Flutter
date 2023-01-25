@@ -18,6 +18,8 @@ class AppViewModel extends ChangeNotifier {
 
   int get taskDone => task.where((element) => element.isDone).length;
 
+  String get userName => user.username;
+
   void addSingleTask(Task newTask) {
     task.add(newTask);
     notifyListeners();
@@ -38,6 +40,11 @@ class AppViewModel extends ChangeNotifier {
 
   void setTaskValue(int taskIndex, bool taskValue) {
     task[taskIndex].isDone = taskValue;
+    notifyListeners();
+  }
+
+  void updateUserName(String name) {
+    user.username = name;
     notifyListeners();
   }
 
