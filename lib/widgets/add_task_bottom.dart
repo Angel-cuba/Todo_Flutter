@@ -15,6 +15,7 @@ class BottomSheetView extends StatelessWidget {
         padding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: Container(
+            padding: const EdgeInsets.only(bottom: 10),
             height: 90,
             child: Center(
               child: SizedBox(

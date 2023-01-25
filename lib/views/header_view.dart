@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_todo/view_model/app_view_model.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/delete_bottom_view.dart';
 import '../widgets/setting_bottom_view.dart';
 
 class HeaderView extends StatelessWidget {
@@ -45,7 +46,7 @@ class HeaderView extends StatelessWidget {
           Expanded(
               child: InkWell(
                   onTap: () {
-                    value.buttonShow(const SettingBottomView(), context);
+                    value.buttonShow(const DeleteBottomView(), context);
                   },
                   child: Icon(Icons.delete, color: value.clr4, size: 30))),
           Expanded(
