@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo/view_model/app_view_model.dart';
+import 'package:flutter_todo/widgets/add_task_bottom.dart';
 import 'package:provider/provider.dart';
 
 class AddTaskView extends StatelessWidget {
@@ -19,12 +20,7 @@ class AddTaskView extends StatelessWidget {
                   side: BorderSide(color: value.clr4, width: 1)),
             ),
             onPressed: () {
-              value.buttonShow(
-                  Container(
-                    height: 100,
-                    color: Colors.amberAccent,
-                  ),
-                  context);
+              value.buttonShow(const BottomSheetView(), context);
             }, //
             child: const Icon(
               Icons.add,
