@@ -18,7 +18,14 @@ class AddTaskView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(color: value.clr4, width: 1)),
             ),
-            onPressed: () {}, //
+            onPressed: () {
+              value.buttonShow(
+                  Container(
+                    height: 100,
+                    color: Colors.amberAccent,
+                  ),
+                  context);
+            }, //
             child: const Icon(
               Icons.add,
               size: 30,
