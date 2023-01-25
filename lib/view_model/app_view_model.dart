@@ -14,6 +14,10 @@ class AppViewModel extends ChangeNotifier {
 
   int get numTask => task.length;
 
+  int get remaningTask => task.where((element) => !element.isDone).length;
+
+  int get taskDone => task.where((element) => element.isDone).length;
+
   void addSingleTask(Task newTask) {
     task.add(newTask);
     notifyListeners();

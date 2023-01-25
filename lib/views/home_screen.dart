@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo/views/add_task_view.dart';
+import 'package:flutter_todo/views/task_info_view.dart';
 import 'package:flutter_todo/views/task_list_view.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -15,7 +16,7 @@ class MyHomePage extends StatelessWidget {
                 //Header view
                 Expanded(flex: 1, child: Container(color: Colors.red)),
                 //Task Info view
-                Expanded(flex: 1, child: Container(color: Colors.green)),
+                const Expanded(flex: 1, child: TaskInfoView()),
                 //Task List view
                 const Expanded(flex: 7, child: TaskListView()),
               ],
