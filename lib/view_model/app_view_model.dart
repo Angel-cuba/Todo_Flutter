@@ -12,8 +12,23 @@ class AppViewModel extends ChangeNotifier {
   Color clr3 = Colors.grey.shade800;
   Color clr4 = Colors.grey.shade900;
 
+  int get numTask => task.length;
+
   void addSingleTask(Task newTask) {
     task.add(newTask);
+    notifyListeners();
+  }
+
+  bool getTaskValue(int taskIndex) {
+    return task[taskIndex].isDone;
+  }
+
+  String getTaskTitle(int taskIndex) {
+    return task[taskIndex].title;
+  }
+
+  void setTaskValue(int taskIndex, bool taskValue) {
+    task[taskIndex].isDone = taskValue;
     notifyListeners();
   }
 
