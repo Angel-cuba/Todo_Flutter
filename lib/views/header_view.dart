@@ -17,30 +17,34 @@ class HeaderView extends StatelessWidget {
               flex: 3,
               child: Container(
                 margin: const EdgeInsets.only(left: 15, top: 10),
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: FittedBox(
-                        fit: BoxFit.fitHeight,
-                        child: Text('Welcome back,',
-                            style: TextStyle(
-                                color: value.clr4,
-                                fontSize: 23,
-                                fontWeight: FontWeight.w500)),
+                child: Expanded(
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: FittedBox(
+                            fit: BoxFit.fitHeight,
+                            child: Text('Welcome back,',
+                                style: TextStyle(
+                                    color: value.clr4,
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.w500)),
+                          ),
+                        ),
                       ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomLeft,
-                      child: FittedBox(
-                          fit: BoxFit.fitHeight,
-                          child: Text(value.userName,
-                              style: TextStyle(
-                                  color: value.clr4,
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold))),
-                    )
-                  ],
+                      Align(
+                        alignment: Alignment.bottomLeft,
+                        child: FittedBox(
+                            fit: BoxFit.fitHeight,
+                            child: Text(value.userName,
+                                style: TextStyle(
+                                    color: value.clr4,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold))),
+                      )
+                    ],
+                  ),
                 ),
               )),
           Expanded(
